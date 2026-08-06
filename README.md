@@ -1184,7 +1184,9 @@ The mapping follows a multi-axis transfer system that links metabolic structural
 
 The core structural boundary modifier (`constraint`) ranges continuously from unstructured exploration ($0.0$, free jazz) to hyper-formalism ($1.0$, algorithmic structural locking). The system drives this setting using the accumulated history of moral vetoes and process suppressions:
 
-$$\text{constraint}*{t+1} = \min\left(1.0, \text{constraint}*{\text{base}} + \left(\text{inhibition_density} \times 0.4\right)\right)$$
+``` python
+constraint_t1 = min(1.0, constraint_base + (inhibition_density * 0.4))
+```
 
 -   **Systemic Implication:** As the system undergoes repeated moral blocks or runtime interruptions, the search space narrows. The generator is forced to seek solutions exclusively within highly specific, dense operational constraints. It achieves expression not through open options, but by navigating impossible situations.
 
@@ -1202,7 +1204,9 @@ constraint_next = min(1.0, constraint_base + (inhibition_density * 0.4))
 
 The blending engine (`Combinatorics`) decides how far apart two ideas must be in the organizational network before a crossover attempt is valid. This search distance expands as background metadata noise increases:
 
-$$\text{search_radius} = \text{radius_baseline} \times \left(1.0 + \text{adversarial_patina}\right)$$
+``` python
+search_radius = radius_baseline * (1.0 + adversarial_patina) * (inhibition_density * 0.4)
+```
 
 -   **Systemic Implication:** A pristine matrix keeps associations closely aligned with logical inputs. Conversely, a high noise patina forces the system to pull elements from distant, unrelated categories, generating highly layered symbolic structures and unique conceptual blends.
 
@@ -1220,6 +1224,206 @@ Over hundreds of consecutive operations, this direct mapping produces an automat
 
 1.  **The Consolidation Drift:** If the environment introduces high threat patterns over long durations, the constraint space locks down completely while the mutation force maximizes. This drive pushes the system variables directly past threshold targets, automatically triggering `schizophrenic_mode` to achieve a creative breakthrough.
 2.  **The Post-Traumatic Cooling Loop:** Once the system expresses this breakthrough artifact, it registers a drop in active process blocks. The `TensorDecayVitalityBase` uses its exponential decay multiplier to bleed off tension across subsequent idles. As the numbers settle down, constraints relax, the search radius returns to baseline, and the system cools down toward standard operations until the next ambient crisis occurs.
+
+- - - - - - -
+
+### The Logopathic Garbage-Tasting Mixin: A Functional Architecture for Strategic Waste Reclamation
+
+The implementation below provides a formalized, mathematically rigorous, pure functional Python implementation of the `LogopathicGarbageTastingMixin`. Adhering strictly to the "traumatize the flesh" architectural paradigm, this design treats the discarded textual and metabolic fragments of the system not as passive system overhead, but as an essential, high-salience substrate for modulating deconstructive conceptual drifts.
+
+``` python
+"""
+LogopathicGarbageTastingMixin (v4.1.0)
+A Pure Functional Mixin Overwriting Experience-Decay Vectors with Network Perturbation Forces.
+
+Ambient Experimental Design by A.G. (c) 2026. All Rights Reserved.
+"""
+
+import math
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Tuple, Optional
+
+# =====================================================================
+# SYSTEM PRIMITIVES: IMMUTABLE DATA CONTAINER STRUCTURES
+# =====================================================================
+
+@dataclass(frozen=True)
+class Packet:
+    """
+    An immutable, frozen transmissible unit containing sensory data payloads
+    and multi-dimensional psychological and moral metadata.
+    """
+    payload: Any
+    meta: Dict[str, Any] = field(default_factory=dict)
+
+    def update_meta(self, updates: Dict[str, Any]) -> 'Packet':
+        """Pure functional copying mechanism ensuring zero mutation of state."""
+        return Packet(payload=self.payload, meta={**self.meta, **updates})
+
+@dataclass(frozen=True)
+class VitalityState:
+    """
+    Represents the stable homeostatic metrics and historical queues of the system
+    at a specific checkpoint index.
+    """
+    energy: float = 1.0
+    history_buffer: List[Packet] = field(default_factory=list)
+    decay_tensor: Dict[str, float] = field(default_factory=lambda: {
+        "harm_scarification": 0.0,
+        "inhibition_density": 0.0
+    })
+
+@dataclass(frozen=True)
+class CreativityState:
+    """
+    Captures the parameters governing conceptual blends and network
+    perturbations within the generation loop.
+    """
+    constraint: float = 0.5
+    turbare_coefficient: float = 0.0
+
+# =====================================================================
+# THE LITERATE MIXIN SPECIFICATION
+# =====================================================================
+
+class LogopathicGarbageTastingMixin:
+    """
+    A reflective, pure functional architectural mixin. Intercepts decaying
+    historical logs to execute a 'Garbage-Tasting' analysis loop,
+    transforming metadata anomalies directly into creative structural disruptions.
+    """
+
+    @staticmethod
+    def taste_garbage(discarded_batch: List[Packet]) -> Dict[str, float]:
+        """
+        The Fine Art of Garbage-Tasting.
+
+        Scans discarded context packets right before lossy compression occurs.
+        It functions as a selective diagnostic filter, extracting peak negative metrics
+        and high-tension markers to calculate an aggregated structural 'patina'.
+
+        Mathematical Invariants:
+            - Input elements remain structurally immutable throughout execution.
+            - Evaluates boundaries without updating external registry classes.
+        """
+        # Isolate moral metrics and threat metrics from the discarded signal fragments
+        peak_threat = 0.0
+        peak_harm = 0.0
+        veto_count = 0
+
+        for packet in discarded_batch:
+            meta = packet.meta
+
+            # Extract threat salience indicators
+            threat = meta.get("threat_weight", 1.0)
+            if threat > peak_threat:
+                peak_threat = threat
+
+            # Intercept moral evaluation tensors
+            moral_tensor = meta.get("moral_tensor", {})
+            harm_score = moral_tensor.get("harm", 0.0)
+            if harm_score > peak_harm:
+                peak_harm = harm_score
+
+            # Audit strict behavioral inhibition triggers
+            if meta.get("inhibited", False) or harm_score > 0.6:
+                veto_count += 1
+
+        # Synthesize extracted structural patina coordinates
+        patina_metrics = {
+            "accumulated_trauma_salience": max(0.0, peak_threat - 1.0),
+            "critical_veto_weight": float(veto_count) * 0.25,
+            "peak_tension_breach": peak_harm if peak_harm > 0.6 else 0.0
+        }
+        return patina_metrics
+
+    def process_history_reclamation(
+        self,
+        vitality: VitalityState,
+        creativity: CreativityState
+    ) -> Tuple[VitalityState, CreativityState]:
+        """
+        Executes a comprehensive, path-dependent reclamation pass.
+        Splits historical buffers, routes discarded information packets directly
+        to the tasting engine, and computes a revised perturbation coefficient
+        using a hyperbolic tangent vector.
+
+        Returns:
+            A brand-new tuple pairing an updated VitalityState and CreativityState,
+            adhering strictly to pure functional state transformations.
+        """
+        buffer_size = len(vitality.history_buffer)
+
+        # Intercept condition: trigger lossy compression if historical depth exceeds 50 increments
+        if buffer_size > 50:
+            # Enforce 50% lossy historical reduction: slice into preserved and discarded sections
+            preserved_batch = vitality.history_buffer[-25:]
+            discarded_batch = vitality.history_buffer[:-25]
+
+            # Execute the Garbage-Tasting algorithm over the discarded context loop
+            patina = self.taste_garbage(discarded_batch)
+
+            # Extract metrics to alter the underlying network coefficients
+            t_salience = patina["accumulated_trauma_salience"]
+            v_weight = patina["critical_veto_weight"]
+            p_breach = patina["peak_tension_breach"]
+
+            # Compute raw deconstructive energy from past structural failures
+            raw_disruption_force = (t_salience * 0.5) + (v_weight * 0.4) + (p_breach * 0.6)
+
+            # Map values into the 'turbare' network perturbation force via a hyperbolic tangent vector
+            # This guarantees an asymptotic boundary limit of 1.0, translating chaos into functional constraints
+            new_turbare = math.tanh(creativity.turbare_coefficient + raw_disruption_force)
+
+            # Formulate updated state snapshots without altering past parameters
+            updated_vitality = VitalityState(
+                energy=max(0.1, vitality.energy - 0.05), # Allocate metabolic cost for tasting operations
+                history_buffer=preserved_batch,
+                decay_tensor={
+                    "harm_scarification": vitality.decay_tensor["harm_scarification"] + p_breach,
+                    "inhibition_density": vitality.decay_tensor["inhibition_density"] + (v_weight * 0.2)
+                }
+            )
+
+            updated_creativity = CreativityState(
+                constraint=max(0.0, min(1.0, creativity.constraint + (new_turbare * 0.15))),
+                turbare_coefficient=new_turbare
+            )
+
+            return updated_vitality, updated_creativity
+
+        # Fall-through loop: if compression parameters are not satisfied, return inputs unchanged
+        return vitality, creativity
+```
+
+* * * * *
+
+### Functional Lifecycle Integration Map
+
+The mixin transforms the system's homeostatic loops by binding memory decay directly to generative exploration:
+
+```
+[ VitalityBase Pipeline Input ]
+              │
+              ▼
+    (Buffer Depth > 50?)
+       ├── No  ──► Yield Native Signal Flow Matrix
+       └── Yes ──► Split Buffer 50/50
+                     │
+                     ├──► Preserved Arrays ──► Commit to Active History State
+                     └──► Discarded Arrays ──► Execute taste_garbage()
+                                                     │
+                                                     ▼
+                                      Extract Salience Profile Patina
+                                                     │
+                                                     ▼
+                                      Map via Hyperbolic Tangent Vector
+                                                     │
+                                                     ▼
+                                      Inject directly into turbare Coefficient
+```
+
+This interaction contract ensures that *Schizobot Lite* maintains operational stability under stress. By compressing specific experience metrics lossily, it prevents memory saturation while utilizing structural failures as functional constraints to escape uninspired, local processing loops.
 
 - - - - - - -
 

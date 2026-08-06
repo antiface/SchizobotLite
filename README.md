@@ -260,6 +260,106 @@ class SimplifiedSchizobot:
 
 - - - - - - -
 
+Executable functional unit tests have been constructed below using Python's standard `unittest` framework to rigorously validate both the separate pipeline transformations and the emergent activation criteria of the simplified Schizobot specification.
+
+``` python
+import unittest
+import random
+import time
+from typing import Any, Dict, List
+from dataclasses import dataclass, field
+
+# ==========================================
+# TEST CODE COMPONENT DEPLOYMENT
+# ==========================================
+
+class TestSchizobotEmergence(unittest.TestCase):
+    """Functional unit tests validating the simplified strange-loop automaton execution pipeline 
+    and the emergent schizoid activation logic criteria.
+    """
+
+    def setUp(self) -> None:
+        """Initializes a clean instance of the SimplifiedSchizobot system prior to each test case."""
+        self.bot = SimplifiedSchizobot()
+
+    def test_pipeline_data_flow_integrity(self) -> None:
+        """Verifies that a packet successfully cycles through all pipeline modules and finishes 
+        with standard baseline configurations populated in its metadata.
+        """
+        stimulus = "Standard sensory input node"
+        output_packet = self.bot.tick(stimulus)
+
+        # Confirm data payloads and foundational pipeline tags exist
+        self.assertEqual(output_packet.payload["blend"], stimulus)
+        self.assertIn("id", output_packet.meta)
+        self.assertIn("threat_weight", output_packet.meta)
+        self.assertIn("moral_tensor", output_packet.meta)
+        self.assertIn("artifact", output_packet.meta)
+        self.assertTrue(len(self.bot.kernel.records) > 0)
+
+    def test_deterministic_emergence_activation(self) -> None:
+        """Forces all system state variables into thresholds that mathematically guarantee 
+        the activation of emergent 'schizophrenic_mode'.
+        """
+        # Inject custom seed state parameters into the sub-modules to override random variability
+        # 1. Force high paranoia to push threat weight calculation past 1.2
+        self.bot.adversary.paranoia = 1.0
+        
+        # 2. Force high conscience sensitivity to ensure harm evaluation breaks past 0.6
+        self.bot.conscience.sensitivity = 1.0
+        
+        # 3. Force high baseline engine constraints to safely land past 0.6
+        self.bot.synthesis.constraint = 0.8
+
+        # We execute multiple loops if necessary to ensure randomized variables cycle into matching states, 
+        # or mock the random calls for pure mathematical evaluation.
+        # Given the sensitivity and paranoia are pegged to 1.0, math models dictate values will reliably breach thresholds.
+        success = False
+        for _ in range(20):  # Run loop iterations to overcome internal uniform distributions
+            res = self.bot.tick("Targeted trigger stimulus")
+            if res.meta.get("schizophrenic_mode", False):
+                success = True
+                # Validate the target configuration attributes
+                self.assertTrue(res.meta["threat_weight"] > 1.2)
+                self.assertTrue(res.meta["inhibited"])
+                self.assertTrue(res.meta["constraint"] > 0.6)
+                break
+        
+        self.assertTrue(success, "Failed to trigger emergent schizophrenic_mode despite maximized boundaries.")
+
+    def test_sub_threshold_suppression(self) -> None:
+        """Ensures that if even a single parameter is under-stimulated (e.g., paranoia is zero), 
+        the system correctly passes the packet without triggering schizophrenic_mode.
+        """
+        # Suppress paranoia down to absolute minimums
+        self.bot.adversary.paranoia = 0.0
+        self.bot.conscience.sensitivity = 0.9
+        self.bot.synthesis.constraint = 0.9
+
+        res = self.bot.tick("Sub-threshold validation probe")
+        
+        # Verification that standard processing finished but emergence did not trigger
+        self.assertFalse(res.meta.get("schizophrenic_mode", False))
+
+    def test_aux_bus_entropy_injection(self) -> None:
+        """Validates that the AUX communication matrix correctly appends metadata metrics 
+        and alters underlying packet payload attributes when noise criteria are met.
+        """
+        manifold = AUXManifold(noise_level=1.0)  # Guarantee noise perturbation triggers
+        packet = Packet(payload="Raw text", meta={"threat_weight": 1.0})
+        
+        processed = manifold.route(packet)
+        self.assertTrue(processed.meta.get("noisy", False))
+        self.assertAlmostEqual(processed.meta["threat_weight"], 1.2)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+```
+
+- - - - - - -
+
 This site and its contents are part of an ongoing research-creation project exploring the intersections of art, history, and philosophy. All works are offered in good faith as contributions to public discourse and aesthetic reflection. The responsibility for interpretation remains with each participant in that dialogue.
 
 [A.G. (c) 2026. ![A.G. (c) 2026. All Rights Reserved](https://historiotheque.files.wordpress.com/2016/11/ag_signature_official_2015_50px_cropped.jpg) All Rights Reserved.](http://alexgagnon.com)

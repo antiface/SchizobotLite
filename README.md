@@ -62,7 +62,7 @@ Instead of using diverse bespoke protocols, abstract data types, and isolated da
 
 ### The Unified Data Model
 
-```
+``` python
 from dataclasses import dataclass, field
 from typing import Any, Dict, List
 
@@ -86,7 +86,7 @@ The core engine runs as a centralized pipeline mapping `Packet -> Packet` sequen
 
 The event-driven matrix is generalized into a simple synchronous state pipeline featuring uniform baseline entropy injection.
 
-```
+``` python
 import random
 
 class AUXManifold:
@@ -108,7 +108,7 @@ class AUXManifold:
 
 All cognitive distortions (paranoia, disorganization, mortification, delusions) are collapsed into a singular array of pure mathematical operators acting on the packet metadata.
 
-```
+``` python
 class AdversarialSuite:
     """Generalized engine implementing worst-case threat and structural disorganization filters."""
     def __init__(self, paranoia: float = 0.6):
@@ -131,7 +131,7 @@ class AdversarialSuite:
 
 Morality tensors and multi-dimensional valuation matrices are generalized into a simplified scalar evaluation loop that enforces behavioral limits.
 
-```
+``` python
 class ConscienceConstraint:
     """Unified aesthetic-moral filter that acts as a constraint satisfaction engine."""
     def __init__(self, sensitivity: float = 0.55):
@@ -157,7 +157,7 @@ class ConscienceConstraint:
 
 Collective memory registries and combinatorial algorithms are abstracted into a simple history compilation matrix that pushes or pulls against structural boundaries.
 
-```
+``` python
 class SynthesisEngine:
     """Unified module combining shared memory registries and combinatorial creativity filters."""
     def __init__(self, constraint: float = 0.5):
@@ -181,7 +181,7 @@ class SynthesisEngine:
 
 The cybernetic regulator and the runtime compiler are combined into a optimization kernel that traces system loads and shifts structural code variables dynamically.
 
-```
+``` python
 class KernelCore:
     """Manages homeostatic limits, log persistence, and runtime self-modification rules."""
     def __init__(self):
@@ -215,7 +215,7 @@ class KernelCore:
 
 The complete orchestrator connects these abstracted components into a single execution step.
 
-```
+``` python
 import time
 
 class SimplifiedSchizobot:

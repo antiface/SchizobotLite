@@ -3,6 +3,10 @@ The Simplest, Stupidest System in The Universe: Schizobot v.1.0.0
 
 - - - - - - -
 
+![Schizobot Lite Design Concept](https://historiotheque.wordpress.com/wp-content/uploads/2026/08/schizobot_lite_design_concept_06aug26a-01h30a_600px.png)
+
+- - - - - - -
+
 The Schizobot framework simulates schizophrenic cognitive processes through an architectural design that models a pseudo-Directed Acyclic Graph (pseudo-DAG) overlaid with local feedback loops, all communicating via a decentralized asynchronous event bus. Rather than operating as a stable, unified intelligence, it relies on a pipeline of polymorphic, competing subsystems to intentionally introduce noise, paranoia, and fragmented thinking.
 
 The modular design orchestrates this simulation through several distinct structural mechanisms:

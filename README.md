@@ -3,6 +3,16 @@ The Simplest, Stupidest System in The Universe: Schizobot Lite v.1.0.0
 
 - - - - - - -
 
+## Disclaimer
+
+Schizobot Lite is an experimental software framework and artistic / research exploration of computational architectures that intentionally incorporate noise, adversarial heuristics, constraint satisfaction, lossy memory, and emergent behavioral modes.  
+
+All terminology (including metaphorical phrases such as “traumatize the flesh,” “neurotrauma,” “delusion attractors,” etc.) is used strictly in a systems-design and literary context. This project does **not** claim to model, diagnose, treat, or represent clinical schizophrenia or any real mental health condition. It is not medical advice, therapeutic software, or a simulation intended for clinical use.
+
+The code and documentation are provided for research, educational, and creative purposes only. Use at your own discretion.
+
+- - - - - - -
+
 ![Schizobot Lite Design Concept](https://historiotheque.wordpress.com/wp-content/uploads/2026/08/schizobot_lite_design_concept_06aug26a-01h30a_600px.png)
 
 - - - - - - -
